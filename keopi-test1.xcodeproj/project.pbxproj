@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F05656626EA8BCE00EEEA83 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F05656526EA8BCE00EEEA83 /* CalendarView.swift */; };
+		5FB0E3E826E031C4001F3D63 /* CafeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3E726E031C4001F3D63 /* CafeDetailView.swift */; };
+		5FB0E3EC26E03A3C001F3D63 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3EB26E03A3C001F3D63 /* Cafe.swift */; };
+		5FB0E3EE26E03A5E001F3D63 /* CafeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3ED26E03A5E001F3D63 /* CafeViewModel.swift */; };
+		5FB0E3F126E03AC0001F3D63 /* CafeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3F026E03AC0001F3D63 /* CafeCellView.swift */; };
+		5FB0E3F326E03B15001F3D63 /* PromoCafeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3F226E03B15001F3D63 /* PromoCafeViewModel.swift */; };
+		5FB0E3F526E04011001F3D63 /* PlusButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3F426E04011001F3D63 /* PlusButtonView.swift */; };
+		5FDB33EC26E12EFF000B4AE2 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB33EB26E12EFF000B4AE2 /* TabbedView.swift */; };
 		5FE6ABA826DFE12B00F0F620 /* keopi_test1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6ABA726DFE12B00F0F620 /* keopi_test1App.swift */; };
 		5FE6ABAA26DFE12B00F0F620 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6ABA926DFE12B00F0F620 /* ContentView.swift */; };
 		5FE6ABAC26DFE12C00F0F620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FE6ABAB26DFE12C00F0F620 /* Assets.xcassets */; };
@@ -14,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F05656526EA8BCE00EEEA83 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		5FB0E3E726E031C4001F3D63 /* CafeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailView.swift; sourceTree = "<group>"; };
+		5FB0E3EB26E03A3C001F3D63 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
+		5FB0E3ED26E03A5E001F3D63 /* CafeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeViewModel.swift; sourceTree = "<group>"; };
+		5FB0E3F026E03AC0001F3D63 /* CafeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCellView.swift; sourceTree = "<group>"; };
+		5FB0E3F226E03B15001F3D63 /* PromoCafeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCafeViewModel.swift; sourceTree = "<group>"; };
+		5FB0E3F426E04011001F3D63 /* PlusButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButtonView.swift; sourceTree = "<group>"; };
+		5FDB33EB26E12EFF000B4AE2 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
 		5FE6ABA426DFE12B00F0F620 /* keopi-test1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "keopi-test1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE6ABA726DFE12B00F0F620 /* keopi_test1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keopi_test1App.swift; sourceTree = "<group>"; };
 		5FE6ABA926DFE12B00F0F620 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +49,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FB0E3E926E03688001F3D63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5FE6ABA926DFE12B00F0F620 /* ContentView.swift */,
+				5FB0E3E726E031C4001F3D63 /* CafeDetailView.swift */,
+				5FB0E3F026E03AC0001F3D63 /* CafeCellView.swift */,
+				5FB0E3F426E04011001F3D63 /* PlusButtonView.swift */,
+				5FDB33EB26E12EFF000B4AE2 /* TabbedView.swift */,
+				5F05656526EA8BCE00EEEA83 /* CalendarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5FB0E3EA26E03A34001F3D63 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5FB0E3EB26E03A3C001F3D63 /* Cafe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5FB0E3EF26E03A6C001F3D63 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5FB0E3ED26E03A5E001F3D63 /* CafeViewModel.swift */,
+				5FB0E3F226E03B15001F3D63 /* PromoCafeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		5FE6AB9B26DFE12B00F0F620 = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +98,10 @@
 		5FE6ABA626DFE12B00F0F620 /* keopi-test1 */ = {
 			isa = PBXGroup;
 			children = (
+				5FB0E3EF26E03A6C001F3D63 /* ViewModels */,
+				5FB0E3EA26E03A34001F3D63 /* Models */,
+				5FB0E3E926E03688001F3D63 /* Views */,
 				5FE6ABA726DFE12B00F0F620 /* keopi_test1App.swift */,
-				5FE6ABA926DFE12B00F0F620 /* ContentView.swift */,
 				5FE6ABAB26DFE12C00F0F620 /* Assets.xcassets */,
 				5FE6ABB026DFE12C00F0F620 /* Info.plist */,
 				5FE6ABAD26DFE12C00F0F620 /* Preview Content */,
@@ -138,8 +186,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F05656626EA8BCE00EEEA83 /* CalendarView.swift in Sources */,
+				5FB0E3EC26E03A3C001F3D63 /* Cafe.swift in Sources */,
+				5FB0E3F126E03AC0001F3D63 /* CafeCellView.swift in Sources */,
+				5FB0E3F526E04011001F3D63 /* PlusButtonView.swift in Sources */,
+				5FB0E3EE26E03A5E001F3D63 /* CafeViewModel.swift in Sources */,
+				5FDB33EC26E12EFF000B4AE2 /* TabbedView.swift in Sources */,
 				5FE6ABAA26DFE12B00F0F620 /* ContentView.swift in Sources */,
 				5FE6ABA826DFE12B00F0F620 /* keopi_test1App.swift in Sources */,
+				5FB0E3E826E031C4001F3D63 /* CafeDetailView.swift in Sources */,
+				5FB0E3F326E03B15001F3D63 /* PromoCafeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
