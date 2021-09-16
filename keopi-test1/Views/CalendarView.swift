@@ -86,31 +86,3 @@ struct CalendarView_Previews: PreviewProvider {
 
 
 
-struct EventView: View {
-    
-    let event: Event
-    var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .foregroundColor(.white)
-            .frame(width: 200, height: 200, alignment: .center)
-            .shadow(color: .black, radius: 10, x: 1, y: 2)
-            .overlay(
-                VStack{
-                    Text(event.performer)
-                    Capsule()
-                        .frame(width: 70, height: 2, alignment: .center)
-                        .foregroundColor(.yellow)
-                    HStack{
-                        Image(systemName: "calendar")
-                        Text((event.date))
-                    }
-                    HStack{
-                        Image("money")
-                            .resizable()
-                            .frame(width: 20, height: 20, alignment: .center)
-                        Text(event.price)
-                    }
-                }
-            )
-    }
-}
