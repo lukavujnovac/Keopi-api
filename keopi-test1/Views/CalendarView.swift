@@ -11,51 +11,34 @@ struct CalendarView: View {
     
     @StateObject var eventViewModel = EventViewModel()
     @State private var date = Date()
+//    var events = TestData.events
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Calendar")
-                .font(Font.system(size: 40))
-                .fontWeight(.bold)
-                .foregroundColor(.yellow)
-                .shadow(color: .black, radius: 10, x: 1, y: 2)
-                .padding()
-            
-            VStack {
-                Form {
+        ZStack{
+                VStack {
+                    Form {
                         DatePicker("Date", selection: $date, displayedComponents: [.date])
                             .datePickerStyle(GraphicalDatePickerStyle())
                             .accentColor(.yellow)
                             .shadow(color: .gray, radius: 10, x: 1, y: 2)
-                        Text("selected \(formatMont(date: date)) \(formatYear(date: date))")
-                    }
-                VStack{
-                    if formatMont(date: date) == "9" {
-                        RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.white)
-                            .frame(width: 200, height: 200, alignment: .center)
-                            .shadow(color: .black, radius: 10, x: 1, y: 2)
-                            .overlay(
-                                VStack{
-                                    Text("Cafe Bar Shpitza")
-                                    Capsule()
-                                        .frame(width: 70, height: 2, alignment: .center)
-                                        .foregroundColor(.yellow)
-                                    HStack{
-                                        Image(systemName: "calendar")
-                                        Text("19:00")
-                                    }
-                                    HStack{
-                                        Image("money")
-                                            .resizable()
-                                            .frame(width: 20, height: 20, alignment: .center)
-                                        Text("130 kn")
-                                    }
-                                }
-                            )
+                            .onChange(of: date, perform: { value in
+                                eventViewModel.fetchEvents(date: "\(formatDay(date: date)).\(formatMont(date: date)).\(formatYear(date: date)).")
+                            })
+                        
+                        Text("selected \(formatDay(date: date)).\(formatMont(date: date)).\(formatYear(date: date)).")
                     }
                 }
-            }
+            VStack{
+                Spacer()
+                if let safeEvents = eventViewModel.events {
+                    ForEach(safeEvents, id: \.self) { event in
+                        EventView(event: event)
+
+                    }
+                }
+        }.accentColor(.black)
+        .navigationTitle(Text("Calendar"))
         }
+            
     }
     
     private func formatMont(date: Date) -> String {
@@ -64,7 +47,12 @@ struct CalendarView: View {
         let components = calendar.dateComponents([.month], from: date)
         let month = components.month
         
-        return("\(month!)")
+        //formatiranje
+        if month! < 10 {
+            return ("0\(month!)")
+        }else {
+            return ("\(month!)")
+        }
     }
     
     private func formatYear(date: Date) -> String {
@@ -75,6 +63,19 @@ struct CalendarView: View {
         
         return ("\(year!)")
     }
+    
+    private func formatDay(date: Date) -> String {
+        
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day], from: date)
+        let day = components.day
+        
+        if day! < 10 {
+            return ("0\(day!)")
+        }else {
+            return ("\(day!)")
+        }
+    }
 }
 
 struct CalendarView_Previews: PreviewProvider {
@@ -83,3 +84,33 @@ struct CalendarView_Previews: PreviewProvider {
     }
 }
 
+
+
+struct EventView: View {
+    
+    let event: Event
+    var body: some View {
+        RoundedRectangle(cornerRadius: 20)
+            .foregroundColor(.white)
+            .frame(width: 200, height: 200, alignment: .center)
+            .shadow(color: .black, radius: 10, x: 1, y: 2)
+            .overlay(
+                VStack{
+                    Text(event.performer)
+                    Capsule()
+                        .frame(width: 70, height: 2, alignment: .center)
+                        .foregroundColor(.yellow)
+                    HStack{
+                        Image(systemName: "calendar")
+                        Text((event.date))
+                    }
+                    HStack{
+                        Image("money")
+                            .resizable()
+                            .frame(width: 20, height: 20, alignment: .center)
+                        Text(event.price)
+                    }
+                }
+            )
+    }
+}

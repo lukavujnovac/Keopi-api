@@ -108,6 +108,7 @@ struct ContentView: View {
                     cafeViewModel.fetch()
                     promoCafeViewModel.fetch()
                 }
+                .navigationBarHidden(true)
             }.accentColor(.black)
         }
     }

@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5F05656626EA8BCE00EEEA83 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F05656526EA8BCE00EEEA83 /* CalendarView.swift */; };
+		5F2ECC3326EFBE970095A4F6 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2ECC3226EFBE970095A4F6 /* EventViewModel.swift */; };
+		5F2ECC3726EFC5850095A4F6 /* DateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2ECC3626EFC5850095A4F6 /* DateList.swift */; };
 		5F73FBC426ECC92600BC319C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73FBC326ECC92600BC319C /* Event.swift */; };
-		5F73FBC626ECCA7500BC319C /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73FBC526ECCA7500BC319C /* EventViewModel.swift */; };
 		5FB0E3E826E031C4001F3D63 /* CafeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3E726E031C4001F3D63 /* CafeDetailView.swift */; };
 		5FB0E3EC26E03A3C001F3D63 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3EB26E03A3C001F3D63 /* Cafe.swift */; };
 		5FB0E3EE26E03A5E001F3D63 /* CafeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3ED26E03A5E001F3D63 /* CafeViewModel.swift */; };
@@ -25,8 +26,9 @@
 
 /* Begin PBXFileReference section */
 		5F05656526EA8BCE00EEEA83 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		5F2ECC3226EFBE970095A4F6 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		5F2ECC3626EFC5850095A4F6 /* DateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateList.swift; sourceTree = "<group>"; };
 		5F73FBC326ECC92600BC319C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		5F73FBC526ECCA7500BC319C /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		5FB0E3E726E031C4001F3D63 /* CafeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailView.swift; sourceTree = "<group>"; };
 		5FB0E3EB26E03A3C001F3D63 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		5FB0E3ED26E03A5E001F3D63 /* CafeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeViewModel.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			children = (
 				5FB0E3EB26E03A3C001F3D63 /* Cafe.swift */,
 				5F73FBC326ECC92600BC319C /* Event.swift */,
+				5F2ECC3626EFC5850095A4F6 /* DateList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -80,7 +83,7 @@
 			children = (
 				5FB0E3ED26E03A5E001F3D63 /* CafeViewModel.swift */,
 				5FB0E3F226E03B15001F3D63 /* PromoCafeViewModel.swift */,
-				5F73FBC526ECCA7500BC319C /* EventViewModel.swift */,
+				5F2ECC3226EFBE970095A4F6 /* EventViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,7 +196,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F05656626EA8BCE00EEEA83 /* CalendarView.swift in Sources */,
-				5F73FBC626ECCA7500BC319C /* EventViewModel.swift in Sources */,
+				5F2ECC3726EFC5850095A4F6 /* DateList.swift in Sources */,
+				5F2ECC3326EFBE970095A4F6 /* EventViewModel.swift in Sources */,
 				5F73FBC426ECC92600BC319C /* Event.swift in Sources */,
 				5FB0E3EC26E03A3C001F3D63 /* Cafe.swift in Sources */,
 				5FB0E3F126E03AC0001F3D63 /* CafeCellView.swift in Sources */,
