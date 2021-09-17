@@ -23,7 +23,7 @@ struct CafeDetailView: View {
                         .frame(height: 150, alignment: .center)
                         .padding()
                         .foregroundColor(.white)
-                        .shadow(color: .black, radius: 10, x: 1, y: 2)
+                        .shadow(color: .gray, radius: 10, x: 1, y: 2)
                         .overlay(
                             VStack(spacing: 40){
                                 HStack(spacing: 190){

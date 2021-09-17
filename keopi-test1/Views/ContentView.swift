@@ -11,6 +11,7 @@ struct ContentView: View {
     @StateObject var cafeViewModel = CafeViewModel()
     @StateObject var promoCafeViewModel = PromoCafeViewModel()
     @State private var selectedTab: Int = 0
+    @State private var searchText: String = ""
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.systemYellow
@@ -21,9 +22,28 @@ struct ContentView: View {
             BackgroundView()
             NavigationView {
                 ZStack{
-                    ScrollView{
+                    ScrollView(showsIndicators: false){
                         VStack{
+                            Image("logo16")
                             VStack(spacing: -20){
+                                
+                                HStack{
+                                    SearchBar(text: $searchText)
+                                        .padding()
+                                    
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .frame(width: 45, height: 45, alignment: .center)
+                                        .padding()
+                                        .foregroundColor(.white)
+                                        .shadow(color: .gray, radius: 10, x: 1, y: 2)
+                                        .overlay(
+                                            Image("filter")
+                                                .resizable()
+                                                .renderingMode(.template)
+                                                .frame(width: 25, height: 25, alignment: .center)
+                                                .foregroundColor(.black)
+                                        )
+                                }
                                 HStack {
                                     Text("Promo")
                                         .padding()
@@ -31,7 +51,7 @@ struct ContentView: View {
                                         .font(Font.system(size: 25, weight: .bold, design: .default))
                                     Spacer()
                                 }
-                                ScrollView(.horizontal){
+                                ScrollView(.horizontal, showsIndicators: false){
                                     LazyHStack(spacing: 20){
                                         if let safePromoCafes = promoCafeViewModel.promoCafes {
                                             ForEach(safePromoCafes, id: \.self) { safePromoCafe in
@@ -54,11 +74,11 @@ struct ContentView: View {
                             
                             VStack {
                                 Picker("", selection: $selectedTab) {
-                                    Text("Kafići").tag(0)
-                                    Text("Spremljeno").tag(1)
+                                    Text("All Cafes").tag(0)
+                                    Text("Saved").tag(1)
                                 }.padding()
                                 .pickerStyle(SegmentedPickerStyle())
-                                .shadow(color: .black, radius: 10, x: 1, y: 2)
+                                .shadow(color: .gray, radius: 10, x: 1, y: 2)
                                 
                                 
                                 if selectedTab == 0 {
@@ -144,7 +164,7 @@ struct PromoCafeView: View {
             
             RoundedRectangle(cornerRadius: 25)
                 .fill(Color.white)
-                .shadow(color: .black, radius: 10, x: 1, y: 2)
+                .shadow(color: .gray, radius: 10, x: 1, y: 2)
                 .overlay(
                     
                     VStack {
@@ -218,7 +238,7 @@ struct CalendarButton: View {
                         RoundedRectangle(cornerRadius: 20)
                             .foregroundColor(.yellow)
                             .frame(width: 60, height: 60)
-                            .shadow(color: .black, radius: 10, x: 1, y: 2)
+                            .shadow(color: .gray, radius: 10, x: 1, y: 2)
                             .overlay(
                                 Image(systemName: "calendar")
                                     .resizable()

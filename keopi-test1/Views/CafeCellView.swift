@@ -18,7 +18,7 @@ struct CafeCellView: View {
             RoundedRectangle(cornerRadius: 25.0)
                 .frame(width: 320, height: 120, alignment: .center)
                 .foregroundColor(.white)
-                .shadow(color: .black, radius: 10, x: 1, y: 2)
+                .shadow(color: .gray, radius: 10, x: 1, y: 2)
                 .overlay(
                     ZStack{
                         VStack{
@@ -28,7 +28,7 @@ struct CafeCellView: View {
                                     .scaledToFill()
                                     .frame(width: 130, height: 120, alignment: .center)
                                     .cornerRadius(25)
-                                VStack{
+                                VStack(spacing: 2){
                                     Text("\(cafe.name)")
                                         .frame(width: 170, height: 30, alignment: .center)
                                         .font(Font.system(size: 15, weight: .light, design: .default))

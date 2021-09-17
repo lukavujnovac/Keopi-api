@@ -12,7 +12,6 @@ struct EventView: View {
     @State private var show: Bool = false
     let event: Event
     var body: some View {
-        
         ZStack{
             Button(action: {
                 show.toggle()
@@ -55,7 +54,9 @@ struct EventView: View {
                 Spacer()
                 CustomActionSheet().offset(y: self.show ? 0 : UIScreen.main.bounds.height)
             }.edgesIgnoringSafeArea(.bottom)
-            .background((self.show ? Color.black.opacity(0.3) : Color.clear).edgesIgnoringSafeArea(.all).onTapGesture {
+            .background((self.show ? Color.black.opacity(0.3) : Color.clear)
+                            .edgesIgnoringSafeArea(.all)
+                            .onTapGesture {
                 self.show.toggle()
             })
             .edgesIgnoringSafeArea(.bottom)
@@ -63,8 +64,8 @@ struct EventView: View {
         
         }
         
-    
-}
+    }
+
 
 
 //struct EventView_Previews: PreviewProvider {
@@ -122,18 +123,14 @@ struct CustomActionSheet: View {
                                     .lineLimit(4)
                             } .padding(.leading, 40)
                             
-                            NavigationLink(
-                                destination: Text("Destination"),
-                                label: {
-                                    RoundedRectangle(cornerRadius: 15)
-                                        .foregroundColor(.yellow)
-                                        .frame(width: 200, height: 35, alignment: .center)
-                                        .overlay(
-                                            Text("Show cafe!")
-                                                .foregroundColor(.white)
-                                                .fontWeight(.bold)
-                                        )
-                                })
+                            RoundedRectangle(cornerRadius: 15)
+                                .foregroundColor(.yellow)
+                                .frame(width: 200, height: 35, alignment: .center)
+                                .overlay(
+                                    Text("Show cafe!")
+                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                )
                             
                         }
                     }

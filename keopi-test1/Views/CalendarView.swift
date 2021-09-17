@@ -11,34 +11,36 @@ struct CalendarView: View {
     
     @StateObject var eventViewModel = EventViewModel()
     @State private var date = Date()
-//    var events = TestData.events
+    //    var events = TestData.events
     var body: some View {
         ZStack{
-                VStack {
-                    Form {
-                        DatePicker("Date", selection: $date, displayedComponents: [.date])
-                            .datePickerStyle(GraphicalDatePickerStyle())
-                            .accentColor(.yellow)
-                            .shadow(color: .gray, radius: 10, x: 1, y: 2)
-                            .onChange(of: date, perform: { value in
-                                eventViewModel.fetchEvents(date: "\(formatDay(date: date)).\(formatMont(date: date)).\(formatYear(date: date)).")
-                            })
-                        
-                        Text("selected \(formatDay(date: date)).\(formatMont(date: date)).\(formatYear(date: date)).")
+            VStack {
+                Form {
+                    DatePicker("Date", selection: $date, displayedComponents: [.date])
+                        .datePickerStyle(GraphicalDatePickerStyle())
+                        .accentColor(.yellow)
+                        .shadow(color: .gray, radius: 10, x: 1, y: 2)
+                        .onChange(of: date, perform: { value in
+                            eventViewModel.fetchEvents(date: "\(formatDay(date: date)).\(formatMont(date: date)).\(formatYear(date: date)).")
+                        })
+                    
+                    Text("selected \(formatDay(date: date)).\(formatMont(date: date)).\(formatYear(date: date)).")
+                    
+                    VStack{
+                        Spacer()
+                        if let safeEvents = eventViewModel.events {
+                            ForEach(safeEvents, id: \.self) { event in
+                                EventView(event: event)
+                                
+                            }
+                        }
                     }
                 }
-            VStack{
-                Spacer()
-                if let safeEvents = eventViewModel.events {
-                    ForEach(safeEvents, id: \.self) { event in
-                        EventView(event: event)
-
-                    }
-                }
+            }
+            
         }.accentColor(.black)
         .navigationTitle(Text("Calendar"))
-        }
-            
+        
     }
     
     private func formatMont(date: Date) -> String {
