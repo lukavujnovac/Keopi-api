@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject var promoCafeViewModel = PromoCafeViewModel()
     @State private var selectedTab: Int = 0
     @State private var searchText: String = ""
+    @State private var showFilters: Bool = false
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.systemYellow
@@ -29,7 +30,7 @@ struct ContentView: View {
                                 
                                 HStack{
                                     SearchBar(text: $searchText)
-                                        .padding()
+                                        .padding() 
                                     
                                     RoundedRectangle(cornerRadius: 15)
                                         .frame(width: 45, height: 45, alignment: .center)
@@ -42,7 +43,9 @@ struct ContentView: View {
                                                 .renderingMode(.template)
                                                 .frame(width: 25, height: 25, alignment: .center)
                                                 .foregroundColor(.black)
-                                        )
+                                        ).onTapGesture {
+                                            showFilters.toggle()
+                                        }
                                 }
                                 HStack {
                                     Text("Promo")
@@ -122,8 +125,16 @@ struct ContentView: View {
                                 Spacer()
                             }
                         }
-                    }
+                    }.blur(radius: showFilters ? 1 : 0)
                     CalendarButton()
+                    VStack{
+                        if showFilters {
+                            Spacer()
+                            FilterView()
+                                .background(Color("lightergray"))
+                        }
+                    }.edgesIgnoringSafeArea(.bottom)
+                    
                 }.onAppear{
                     cafeViewModel.fetch()
                     promoCafeViewModel.fetch()

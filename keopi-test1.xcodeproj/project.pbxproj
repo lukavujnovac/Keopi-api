@@ -10,6 +10,7 @@
 		5F05656626EA8BCE00EEEA83 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F05656526EA8BCE00EEEA83 /* CalendarView.swift */; };
 		5F2ECC3326EFBE970095A4F6 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2ECC3226EFBE970095A4F6 /* EventViewModel.swift */; };
 		5F2ECC3726EFC5850095A4F6 /* DateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2ECC3626EFC5850095A4F6 /* DateList.swift */; };
+		5F4C583226F8B84F0051594B /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4C583126F8B84F0051594B /* FilterView.swift */; };
 		5F5612A926F4CC9F00EE73A5 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5612A826F4CC9F00EE73A5 /* SearchBarView.swift */; };
 		5F73FBC426ECC92600BC319C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73FBC326ECC92600BC319C /* Event.swift */; };
 		5F7ABC7526F35EDC0001B43A /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7ABC7426F35EDC0001B43A /* EventView.swift */; };
@@ -30,6 +31,7 @@
 		5F05656526EA8BCE00EEEA83 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		5F2ECC3226EFBE970095A4F6 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		5F2ECC3626EFC5850095A4F6 /* DateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateList.swift; sourceTree = "<group>"; };
+		5F4C583126F8B84F0051594B /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		5F5612A826F4CC9F00EE73A5 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		5F73FBC326ECC92600BC319C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		5F7ABC7426F35EDC0001B43A /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				5F05656526EA8BCE00EEEA83 /* CalendarView.swift */,
 				5F7ABC7426F35EDC0001B43A /* EventView.swift */,
 				5F5612A826F4CC9F00EE73A5 /* SearchBarView.swift */,
+				5F4C583126F8B84F0051594B /* FilterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				5FDB33EC26E12EFF000B4AE2 /* TabbedView.swift in Sources */,
 				5F5612A926F4CC9F00EE73A5 /* SearchBarView.swift in Sources */,
 				5FE6ABAA26DFE12B00F0F620 /* ContentView.swift in Sources */,
+				5F4C583226F8B84F0051594B /* FilterView.swift in Sources */,
 				5FE6ABA826DFE12B00F0F620 /* keopi_test1App.swift in Sources */,
 				5FB0E3E826E031C4001F3D63 /* CafeDetailView.swift in Sources */,
 				5FB0E3F326E03B15001F3D63 /* PromoCafeViewModel.swift in Sources */,

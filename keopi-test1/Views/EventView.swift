@@ -9,13 +9,9 @@ import SwiftUI
 
 struct EventView: View {
     
-    @State private var show: Bool = false
     let event: Event
     var body: some View {
         ZStack{
-            Button(action: {
-                show.toggle()
-            }, label: {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(.white)
                     .frame(width: 150, height: 150, alignment: .center)
@@ -49,24 +45,19 @@ struct EventView: View {
                             }
                         }
                     )
-            })
-            VStack{
-                Spacer()
-                CustomActionSheet().offset(y: self.show ? 0 : UIScreen.main.bounds.height)
-            }.edgesIgnoringSafeArea(.bottom)
-            .background((self.show ? Color.black.opacity(0.3) : Color.clear)
-                            .edgesIgnoringSafeArea(.all)
-                            .onTapGesture {
-                self.show.toggle()
-            })
-            .edgesIgnoringSafeArea(.bottom)
+//            VStack{
+//                Spacer()
+//                CustomActionSheet().offset(y: self.show ? 0 : UIScreen.main.bounds.height)
+//            }.edgesIgnoringSafeArea(.bottom)
+//            .background((self.show ? Color.black.opacity(0.3) : Color.clear)
+//                            .edgesIgnoringSafeArea(.all)
+//                            .onTapGesture {
+//                                self.show.toggle()
+//                            })
+//            .edgesIgnoringSafeArea(.bottom)
         }.animation(.default)
-        
-        }
-        
     }
-
-
+}
 
 //struct EventView_Previews: PreviewProvider {
 //    static var previews: some View {
@@ -131,7 +122,6 @@ struct CustomActionSheet: View {
                                         .foregroundColor(.white)
                                         .fontWeight(.bold)
                                 )
-                            
                         }
                     }
                 )

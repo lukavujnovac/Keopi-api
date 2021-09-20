@@ -11,6 +11,7 @@ struct CalendarView: View {
     
     @StateObject var eventViewModel = EventViewModel()
     @State private var date = Date()
+    @State private var show: Bool = false
     //    var events = TestData.events
     var body: some View {
         ZStack{
@@ -24,24 +25,41 @@ struct CalendarView: View {
                             eventViewModel.fetchEvents(date: "\(formatDay(date: date)).\(formatMont(date: date)).\(formatYear(date: date)).")
                         })
                     
-                    Text("selected \(formatDay(date: date)).\(formatMont(date: date)).\(formatYear(date: date)).")
-                    
-                    VStack{
-                        Spacer()
+                    Text("selected \(formatDay(date: date)).\(formatMont(date: date)).\(formatYear(date: date)).")  
+                        .hidden()
+                }
+                VStack {
+                    HStack{
                         if let safeEvents = eventViewModel.events {
                             ForEach(safeEvents, id: \.self) { event in
-                                EventView(event: event)
-                                
-                            }
+                                HStack{
+                                    EventView(event: event)
+                                        .onTapGesture {
+                                            show.toggle()
+                                        }
+                                }
+                            }   
                         }
                     }
-                }
+                }   
             }
+            VStack{
+                Spacer()
+                CustomActionSheet().offset(y: self.show ? 0 : UIScreen.main.bounds.height)
+            }.edgesIgnoringSafeArea(.bottom)
+            .background((self.show ? Color.black.opacity(0.3) : Color.clear)
+                            .edgesIgnoringSafeArea(.all)
+                            .onTapGesture {
+                                self.show.toggle()
+                            })
+            .edgesIgnoringSafeArea(.bottom)
             
         }.accentColor(.black)
         .navigationTitle(Text("Calendar"))
+        .animation(.default)
         
     }
+    
     
     private func formatMont(date: Date) -> String {
         
@@ -49,7 +67,6 @@ struct CalendarView: View {
         let components = calendar.dateComponents([.month], from: date)
         let month = components.month
         
-        //formatiranje
         if month! < 10 {
             return ("0\(month!)")
         }else {
