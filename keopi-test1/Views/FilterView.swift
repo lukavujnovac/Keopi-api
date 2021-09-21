@@ -14,12 +14,15 @@ struct FilterView: View {
     let hours = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
     @State private var selectedHour = 0
     
-    @State private var smoking: Bool = false
+    @State var smoking: Bool = false
+    @State var darts: Bool = false
+    @State var billiards: Bool = false
+    @State var betting: Bool = false
     
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
             .frame(height: 750, alignment: .center)
-            .foregroundColor(Color("lightergray"))
+            .foregroundColor(.white)
             .overlay(
                 VStack(spacing: 20) {
                     VStack(spacing: 10) {
@@ -33,7 +36,10 @@ struct FilterView: View {
                         HStack {
                             Menu {
                                 Button(action: {}, label: {
-                                    Text("Button")
+                                    Text("Split")
+                                })
+                                Button(action: {}, label: {
+                                    Text("Kaštela")
                                 })
                             } label: {
                                 RoundedRectangle(cornerRadius: 10)
@@ -81,7 +87,7 @@ struct FilterView: View {
                             
                             Menu {
                                 Button(action: {}, label: {
-                                    Text("Button")
+                                    Text("Turbofolk")
                                 })
                             } label: {
                                 RoundedRectangle(cornerRadius: 10)
@@ -110,7 +116,7 @@ struct FilterView: View {
                             
                             Menu {
                                 Button(action: {}, label: {
-                                    Text("Button")
+                                    Text("<50")
                                 })
                             } label: {
                                 RoundedRectangle(cornerRadius: 10)
@@ -139,7 +145,7 @@ struct FilterView: View {
                             
                             Menu {
                                 Button(action: {}, label: {
-                                    Text("Button")
+                                    Text("<22")
                                 })
                             } label: {
                                 RoundedRectangle(cornerRadius: 10)
@@ -168,7 +174,10 @@ struct FilterView: View {
                             
                             Menu {
                                 Button(action: {}, label: {
-                                    Text("Button")
+                                    Text("Terrace")
+                                })
+                                Button(action: {}, label: {
+                                    Text("No Terrace")
                                 })
                             } label: {
                                 RoundedRectangle(cornerRadius: 10)
@@ -198,33 +207,35 @@ struct FilterView: View {
                                         .resizable()
                                         .frame(width: 25, height: 25, alignment: .center)
                                 }
+                                .toggleStyle(SwitchToggleStyle(tint: Color.yellow))
                                 Spacer()
                             }.padding()
                             HStack{
-                                Toggle(isOn: $smoking) {
+                                Toggle(isOn: $billiards) {
                                     Image("billiard")
                                         .resizable()
                                         .frame(width: 25, height: 25, alignment: .center)
                                 }
+                                .toggleStyle(SwitchToggleStyle(tint: Color.yellow))
                                 Spacer()
                             }.padding()
                         }
                         VStack{
                             HStack{
-                                Toggle(isOn: $smoking) {
+                                Toggle(isOn: $darts) {
                                     Image("darts")
                                         .resizable()
                                         .frame(width: 25, height: 25, alignment: .center)
-                                }
+                                }.toggleStyle(SwitchToggleStyle(tint: Color.yellow))
                                 Spacer()
                             }.padding()
                             HStack{
-                                Toggle(isOn: $smoking) {
+                                Toggle(isOn: $betting) {
                                     Image("betting")
                                         .resizable()
                                         .frame(width: 25, height: 25, alignment: .center)
                                 }
-                                
+                                .toggleStyle(SwitchToggleStyle(tint: Color.yellow))
                                 Spacer()
                             }.padding()
                         }

@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var selectedTab: Int = 0
     @State private var searchText: String = ""
     @State private var showFilters: Bool = false
+    @State private var promoIsLoading: Bool = false
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.systemYellow
@@ -126,15 +127,10 @@ struct ContentView: View {
                             }
                         }
                     }.blur(radius: showFilters ? 1 : 0)
+                    .sheet(isPresented: $showFilters, content: {
+                        FilterView()
+                    })
                     CalendarButton()
-                    VStack{
-                        if showFilters {
-                            Spacer()
-                            FilterView()
-                                .background(Color("lightergray"))
-                        }
-                    }.edgesIgnoringSafeArea(.bottom)
-                    
                 }.onAppear{
                     cafeViewModel.fetch()
                     promoCafeViewModel.fetch()
@@ -162,6 +158,12 @@ extension String {
             //
         }
         return UIImage()
+    }
+}
+
+struct SecondTabView: View {
+    var body: some View {
+        Text("No Saved Cafes")
     }
 }
 
@@ -206,29 +208,6 @@ struct PromoCafeView: View {
         }
     }
 }
-
-struct CafeListView: View {
-    
-    @StateObject var cafeViewModel = CafeViewModel()
-    
-    var body: some View {
-        VStack(spacing: 20){
-            if let safeCafes = cafeViewModel.cafes?.cafes {
-                ForEach(safeCafes, id: \.self) { cafe in
-                    HStack{
-                        NavigationLink(
-                            destination: CafeDetailView(cafeBar: cafe),
-                            label: {
-                                CafeCellView(cafe: cafe)
-                            })
-                    }
-                }
-                
-            }
-        }
-    }
-}
-
 
 struct BackgroundView: View {
     var body: some View {

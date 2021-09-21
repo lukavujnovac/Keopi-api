@@ -6,12 +6,15 @@
 //
 
 import Foundation
+import SwiftUI
 
 class CafeViewModel: ObservableObject {
     
     @Published var cafes: CafeListModel?
+    @State var isLoading: Bool = true
     
     func fetch() {
+        isLoading = false
         guard let url = URL(string: "https://keopiapi.azurewebsites.net/api/cafes?seed=\(Int.random(in: 1...999))") else {return}
         
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
@@ -20,6 +23,7 @@ class CafeViewModel: ObservableObject {
             do{
                 let cafes = try JSONDecoder().decode(CafeListModel.self, from: data)
                 DispatchQueue.main.async {
+                    self?.isLoading = false
                     self?.cafes = cafes
                 }
             }catch{

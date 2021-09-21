@@ -20,7 +20,6 @@
 		5FB0E3F126E03AC0001F3D63 /* CafeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3F026E03AC0001F3D63 /* CafeCellView.swift */; };
 		5FB0E3F326E03B15001F3D63 /* PromoCafeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3F226E03B15001F3D63 /* PromoCafeViewModel.swift */; };
 		5FB0E3F526E04011001F3D63 /* PlusButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3F426E04011001F3D63 /* PlusButtonView.swift */; };
-		5FDB33EC26E12EFF000B4AE2 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB33EB26E12EFF000B4AE2 /* TabbedView.swift */; };
 		5FE6ABA826DFE12B00F0F620 /* keopi_test1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6ABA726DFE12B00F0F620 /* keopi_test1App.swift */; };
 		5FE6ABAA26DFE12B00F0F620 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6ABA926DFE12B00F0F620 /* ContentView.swift */; };
 		5FE6ABAC26DFE12C00F0F620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FE6ABAB26DFE12C00F0F620 /* Assets.xcassets */; };
@@ -41,7 +40,6 @@
 		5FB0E3F026E03AC0001F3D63 /* CafeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCellView.swift; sourceTree = "<group>"; };
 		5FB0E3F226E03B15001F3D63 /* PromoCafeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCafeViewModel.swift; sourceTree = "<group>"; };
 		5FB0E3F426E04011001F3D63 /* PlusButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButtonView.swift; sourceTree = "<group>"; };
-		5FDB33EB26E12EFF000B4AE2 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
 		5FE6ABA426DFE12B00F0F620 /* keopi-test1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "keopi-test1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE6ABA726DFE12B00F0F620 /* keopi_test1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keopi_test1App.swift; sourceTree = "<group>"; };
 		5FE6ABA926DFE12B00F0F620 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 				5FB0E3E726E031C4001F3D63 /* CafeDetailView.swift */,
 				5FB0E3F026E03AC0001F3D63 /* CafeCellView.swift */,
 				5FB0E3F426E04011001F3D63 /* PlusButtonView.swift */,
-				5FDB33EB26E12EFF000B4AE2 /* TabbedView.swift */,
 				5F05656526EA8BCE00EEEA83 /* CalendarView.swift */,
 				5F7ABC7426F35EDC0001B43A /* EventView.swift */,
 				5F5612A826F4CC9F00EE73A5 /* SearchBarView.swift */,
@@ -213,7 +210,6 @@
 				5FB0E3F126E03AC0001F3D63 /* CafeCellView.swift in Sources */,
 				5FB0E3F526E04011001F3D63 /* PlusButtonView.swift in Sources */,
 				5FB0E3EE26E03A5E001F3D63 /* CafeViewModel.swift in Sources */,
-				5FDB33EC26E12EFF000B4AE2 /* TabbedView.swift in Sources */,
 				5F5612A926F4CC9F00EE73A5 /* SearchBarView.swift in Sources */,
 				5FE6ABAA26DFE12B00F0F620 /* ContentView.swift in Sources */,
 				5F4C583226F8B84F0051594B /* FilterView.swift in Sources */,
